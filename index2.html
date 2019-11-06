@@ -31,12 +31,12 @@
 <!-- oncontextmenu="return false;" -->
 <body style="touch-action: none;" >
 
-    <div class="content-wrapper">
+    <div class="content-wrapper king">
         <div id="app" class="main-content">
             <div id="page1">
                 <div class="logo-wrapper">
                     <svg id="Group_2" data-name="Group 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="609.575" height="420.857" viewBox="0 0 609.575 420.857">
+                        width="500.575" height="420.857" viewBox="0 0 609.575 420.857">
                         <defs>
                             <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
                                 <stop offset="0" stop-color="#f8d559" />
@@ -211,29 +211,24 @@
             </div>
             <!-- PAGE 2-->
             <div id="page2">
-                <div class="logo-wrapper small">
+                <div class="logo-wrapper right">
                     <img src="images/logo.svg" />
                 </div>
-                
-                <div class="form-wrapper">
+
+                <div class="signature-wrapper">
                     <div class="wrapper">
-                        <div class="form-group">
-                            <label>ชื่อ</label>
-                            <input name="fname" class="req" onkeyup="keyupFunction()"/>
-                        </div>
-                        <div class="form-group">
-                            <label>นามสกุล</label>
-                            <input name="sname" class="req" onkeyup="keyupFunction()"/>
-                        </div>
+                        <!-- <img src="https://preview.ibb.co/jnW4Qz/Grumpy_Cat_920x584.jpg" width=400 height=200 /> -->
+                        <canvas id="signature-pad" class="signature-pad" width="600" height="350"></canvas>
                     </div>
-                </div>
-                <div class="line-img">
-                    <img src="images/line-graphic.svg" />
+                    <!-- <div>
+                        <button id="save">Save</button>
+                        <button id="clear">Clear</button>
+                      </div> -->
                 </div>
                 
                 <div class="btn-wrapper">
-                    <button class="btn1">ยกเลิก</button>
-                    <button class="btn2" disabled>ถัดไป</button>
+                    <button class="btn1" id="clear">แก้ไข</button>
+                    <button class="btn2" id="save">ส่งขึ้นจอภาพ</button>
                 </div>
             </div>
 
@@ -242,134 +237,23 @@
                 <div class="logo-wrapper right">
                     <img src="images/logo.svg" />
                 </div>
-                
-                <p>
-                    สืบสานปณิธานการให้ที่งดงาม<br>
-                    ข้าพเจ้าตั้งปณิธานว่า
-                </p>
-                <div class="line-img">
-                    <img src="images/line-graphic.svg" />
-                </div>
 
-                <div class="select-word">
+                <div class="signature-wrapper">
                     <div class="wrapper">
-                        <div class="radio-text">
-                            <label class="container">
-                                <input value="1" name="word" type="radio" id="req_text_w1" class="req_text" onclick="keyupTextFunction()">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="text" id="text1">
-                            ข้าพเจ้าจะทำตัวเป็นประชาชนคนไทยที่ดี
-                            ด้วยการคอยช่วยเหลือผู้อื่นอยู่เสมอ
-                            โดยเฉพาะผู้ที่ตกทุกข์ได้ยากและผู้ที่กำลังเดือนร้อน
+                        <div class="signature-pad">
+                                <div id="image"></div>
                         </div>
                     </div>
-
-                    <div class="wrapper">
-                        <div class="radio-text">
-                            <label class="container">
-                                <input value="2" name="word" type="radio" id="req_text_w2" class="req_text" onclick="keyupTextFunction()">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="text" id="text2">
-                            ข้าพเจ้าจะทำตัวให้เกิดประโยชน์แก่สังคม
-                            และ ประเทศชาติ
-                            ด้วยการคิดดี ทำดี ประพฤติ และ ปฎิบัติตัวเป็นคนดี
-                        </div>
-                    </div>
+                    <!-- <div>
+                        <button id="save">Save</button>
+                        <button id="clear">Clear</button>
+                      </div> -->
                 </div>
-
-                <div class="line-img">
-                    <img src="images/line-graphic.svg" />
-                </div>
-
-                <div class="textarea-wrapper">
-                    <label>พิมพ์ข้อความ คำมั่นสัญญา (0/30)</label>
-                    <textarea align="left" class="req_text1" id="req_text_w3" onkeyup="keyupTextFunction()">
-
-                    </textarea>
-                </div>
-
-                <h3>ขอพระองค์ทรงพระเจริญยิ่งยืนนาน</h3>
                 
-                <div class="btn-wrapper">
-                    <button class="btn1">ยกเลิก</button>
-                    <button class="btn2" disabled>ถัดไป</button>
-                </div>
-            </div>
-
-            <!-- PAGE 4-->
-            <div id="page4">
-                <div class="logo-wrapper small">
-                    <!-- <img src="images/logo.svg" /> -->
-                </div>
-                <div class="image-take">
-                    <div>
-                        <video id="video" width="640" height="480" autoplay></video>
-                        
-                        <div class="image-take-image">
-                            <div>
-                                <canvas id="canvas_camera" width="640" height="480"></canvas>
-                            </div>
-                            <div class="text" id="text">
-                                ข้าพเจ้าจะทำตัวให้เกิดประโยชน์แก่สังคม
-                                และ ประเทศชาติ
-                                ด้วยการคิดดี ทำดี ประพฤติ และ ปฎิบัติตัวเป็นคนดี
-                            </div>
-                            <div class="img">
-                                <img src="images/bg-bt.png" alt="">
-                            </div>
-
-                            <div class="btn-wrapper">
-                                <button class="btn1">ย้อนกลับ</button>
-                                <button class="btn2">ลงนามถวายพระพร</button>
-                            </div>
-                        </div>
-                        <!-- <img src="images/bg-take-photo.png" alt=""> -->
-                    </div>
-                </div>
-                <div class="btn-camera" id="snap">
-                    <img src="images/icon-camera.png" alt="">
-                </div>
-            </div>
-
-            <!-- PAGE 5-->
-            <!-- <div id="page5">
-                <div class="logo-wrapper small">
-                    <img src="images/logo.svg" />
-                </div>
-                <div class="image-take">
-                    <div>
-                        <img src="images/bg-photo.png" alt="">
-                    </div>
-                    <div class="text" id="text">
-                        ข้าพเจ้าจะทำตัวให้เกิดประโยชน์แก่สังคม
-                        และ ประเทศชาติ
-                        ด้วยการคิดดี ทำดี ประพฤติ และ ปฎิบัติตัวเป็นคนดี
-                    </div>
-                    <div class="img">
-                        <img src="images/bg-bt.png" alt="">
-                    </div>
-                </div>
-                <div class="btn-wrapper">
-                    <button class="btn1">ย้อนกลับ</button>
-                    <button class="btn2">ลงนามถวายพระพร</button>
-                </div>
-            </div> -->
-
-            <!-- PAGE 6-->
-            <div id="page6">
-                <div class="logo-wrapper small">
-                    <img src="images/logo.svg" />
-                </div>
-                <div class="image-take">
-                    คุณได้ลงนามถวายพระพรเรียบร้อยแล้ว
-                </div>
-                <div class="btn-wrapper">
-                    <button class="btn1">ตกลง</button>
-                </div>
+                <!-- <div class="btn-wrapper">
+                    <button class="btn1" id="clear">แก้ไข</button>
+                    <button class="btn2" id="save">ส่งขึ้นจอภาพ</button>
+                </div> -->
             </div>
         </div>
 
@@ -388,7 +272,6 @@
         <div class="firefly"></div>
         <div class="firefly"></div>
         <div class="firefly"></div>
-        <!-- <div class="firefly"></div> -->
         
     </div>
 
@@ -398,6 +281,8 @@
     <script src="js/custom.js"></script>
     <script src="js/lottie.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/jquery.drawsvg/1/jquery.drawsvg.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.3/dist/signature_pad.umd.min.js"></script>
+
 
     <!-- <script src="https://unpkg.com/embla-carousel" type="text/javascript"></script> -->
 
@@ -417,7 +302,6 @@
         $("#page4").hide();
         $("#page5").hide();
         $("#page6").hide();
-        $(".image-take-image").hide();
         $("#page1 .title-home").click(function () {
             $("#page1").hide();
             $("#page2").show();
@@ -428,153 +312,53 @@
             $("#page3").show();
         });
 
-         $("#page2 .btn1").click(function () {
-            $("#page2").hide();
-            $("#page1").show();
-        });
-
-        $("#page3 .btn2").click(function () {
-            $("#page2").hide();
-            $("#page3").hide();
-            $("#page4").show();
-
-              // Grab elements, create settings, etc.
-            var video = document.getElementById('video');
-                console.log("mediaDevicesd");
-
-            // Get access to the camera!
-            if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                console.log("mediaDevices");
-                
-                // Not adding `{ audio: true }` since we only want video now
-                navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-                    //video.src = window.URL.createObjectURL(stream);
-                    video.srcObject = stream;
-                    video.play();
-                });
-            }
-                var canvas = document.getElementById('canvas_camera');
-                var context = canvas.getContext('2d');
-                var video = document.getElementById('video');
-
-                // Trigger photo take
-                document.getElementById("snap").addEventListener("click", function () {
-                    context.drawImage(video, 0, 0, 640, 480);
-
-                    if ($("input[name='word']").is(':checked')) {
-                        var value =$("input[name='word']").val();
-                        if(+value === +1) {
-                            document.getElementById("text").innerHTML = document.getElementById("text1").innerHTML;
-                        } else {
-                            document.getElementById("text").innerHTML = document.getElementById("text2").innerHTML;
-                        }   
-                    }
-                    else {
-                        if(document.getElementById("req_text_w3").value !== "") {
-                            document.getElementById("text").innerHTML =document.getElementById("req_text_w3").value;
-                        }
-                    }
-                    console.log("f", document.getElementById("text1").innerHTML)
-                    console.log("f 2", document.getElementById("text2").innerHTML)
-                    
-                    
-                    $(".image-take-image").show()
-                    $("#video").hide()
-                    $("#snap").hide()
-                })
-        });
-
-        $("#page3 .btn1").click(function () {
-            $("#page2").show();
-            $("#page3").hide();
-            $("#page4").hide();
-            
-        });
-
-        // $("#page4 .btn-camera").click(function () {
-        //     // $("#page2").hide();
-        //     // $("#page3").hide();
-        //     // $("#page4").hide();
-        //     // $("#page5").show();
-        // });
-
-        // $("#page5 .btn1").click(function () {
+        //  $("#page2 .btn1").click(function () {
         //     $("#page2").hide();
-        //     $("#page3").hide();
-        //     $("#page4").show();
-        //     $("#page5").hide();
+        //     $("#page1").show();
         // });
 
-        $(".image-take-image .btn2").click(function () {
-            $("#page2").hide();
-            $("#page3").hide();
-            $("#page4").hide();
-            $("#page5").hide();
-            $("#page6").show();
+        // $("#page2 .btn2").click(function () {
+        //     $("#page2").hide();
+        //     $("#page1").show();
+        // });
+
+        var signaturePad = new SignaturePad(document.getElementById('signature-pad'), {
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        penColor: 'rgb(0, 0, 0)'
         });
 
-        $("#page6 .btn1").click(function () {
-            $("#page1").show();
-            $("#page2").hide();
-            $("#page3").hide();
-            $("#page4").hide();
-            $("#page5").hide();
-            $("#page6").hide();
-        });
-
-        $("#req_text_w3").on("keydown", function (e) {
-            $(".textarea-wrapper label").hide();
-            $(this).css("padding-top", "15px");
-            
-        });
-
-        $("svg").beginElement();
         
+        var saveButton = document.getElementById('save');
+        var cancelButton = document.getElementById('clear');
 
-        function keyupFunction() {
-            var inputValidate = true;
+        saveButton.addEventListener('click', function (event) {
+            console.log("signaturePad",  signaturePad)
+            if (signaturePad.isEmpty()) {
+                return alert("Please provide a signature first.");
+            }
+            var data = signaturePad.toDataURL('image/png');
+            console.log(data);
+            document.getElementById("image").innerHTML = "<img src='"+data+"' />";
 
-            $(".req").each(function (index, element) {
-                if ($(element).val() == "")
-                    inputValidate = false;
-            });
 
-            if (inputValidate)
-                $("#page2 .btn2").prop("disabled", false);
-            else
-                $("#page2 .btn2").prop("disabled", true);
+//   window.open(data);
+
+        // Send data to server instead...
+        // window.open(data);
+        });
+
+        // cancelButton.addEventListener('click', function (event) {
+        // signaturePad.clear();
+        // });
+
+        document.getElementById('clear').addEventListener('click', function () {
+            var data = signaturePad.toData();
+        if (data) {
+            data.pop(); // remove the last dot or line
+            signaturePad.fromData(data);
         }
+        });
 
-        function keyupFunction() {
-            var inputValidate = true;
-
-            $(".req").each(function (index, element) {
-                if ($(element).val() == "")
-                    inputValidate = false;
-            });
-
-            if (inputValidate)
-                $("#page2 .btn2").prop("disabled", false);
-            else
-                $("#page2 .btn2").prop("disabled", true);
-        }
-
-        function keyupTextFunction() {
-            console.log("dff")
-            var inputValidate = true;
-
-            // $(".textarea-wrapper label").hide();
-
-            $(".req_text").each(function (index, element) {
-                if ($(element).val() == "" || $(".req_text1").text === "")
-                    inputValidate = false;
-            });
-
-            if (inputValidate)
-                $("#page3 .btn2").prop("disabled", false);
-            else
-                $("#page3 .btn2").prop("disabled", true);
-        }
 
         
     </script>

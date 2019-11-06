@@ -34,6 +34,9 @@
     <div class="content-wrapper">
         <div id="app" class="main-content">
             <div id="page1">
+                <div class="bg-tmp">
+                    <img src="images/bg-01.jpg" />
+                </div>
                 <div class="logo-wrapper">
                     <svg id="Group_2" data-name="Group 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         width="609.575" height="420.857" viewBox="0 0 609.575 420.857">
@@ -207,10 +210,13 @@
                     </svg>
 
                 </div>
-                <a href="#" class="title-home">แตะเพื่อใช้งาน</a>
+                <a href="#" class="title-home">แตะเพื่อเริ่มใช้งาน</a>
             </div>
             <!-- PAGE 2-->
             <div id="page2">
+                <div class="bg-tmp">
+                    <img src="images/bg-01.jpg" />
+                </div>
                 <div class="logo-wrapper small">
                     <img src="images/logo.svg" />
                 </div>
@@ -239,6 +245,9 @@
 
             <!-- PAGE 3-->
             <div id="page3">
+                <div class="bg-tmp">
+                    <img src="images/bg.png" />
+                </div>
                 <div class="logo-wrapper right">
                     <img src="images/logo.svg" />
                 </div>
@@ -260,8 +269,8 @@
                             </label>
                         </div>
                         <div class="text" id="text1">
-                            ข้าพเจ้าจะทำตัวเป็นประชาชนคนไทยที่ดี
-                            ด้วยการคอยช่วยเหลือผู้อื่นอยู่เสมอ
+                            ข้าพเจ้าจะทำตัวเป็นประชาชนคนไทยที่ดี <br>
+                            ด้วยการคอยช่วยเหลือผู้อื่นอยู่เสมอ<br>
                             โดยเฉพาะผู้ที่ตกทุกข์ได้ยากและผู้ที่กำลังเดือนร้อน
                         </div>
                     </div>
@@ -274,8 +283,8 @@
                             </label>
                         </div>
                         <div class="text" id="text2">
-                            ข้าพเจ้าจะทำตัวให้เกิดประโยชน์แก่สังคม
-                            และ ประเทศชาติ
+                            ข้าพเจ้าจะทำตัวให้เกิดประโยชน์แก่สังคม<br>
+                            และ ประเทศชาติ<br>
                             ด้วยการคิดดี ทำดี ประพฤติ และ ปฎิบัติตัวเป็นคนดี
                         </div>
                     </div>
@@ -302,32 +311,32 @@
 
             <!-- PAGE 4-->
             <div id="page4">
-                <div class="logo-wrapper small">
-                    <!-- <img src="images/logo.svg" /> -->
+                <div class="bg-tmp">
+                    <img src="images/bg-new.png" />
                 </div>
                 <div class="image-take">
                     <div>
-                        <video id="video" width="640" height="480" autoplay></video>
-                        
-                        <div class="image-take-image">
-                            <div>
-                                <canvas id="canvas_camera" width="640" height="480"></canvas>
-                            </div>
-                            <div class="text" id="text">
-                                ข้าพเจ้าจะทำตัวให้เกิดประโยชน์แก่สังคม
-                                และ ประเทศชาติ
-                                ด้วยการคิดดี ทำดี ประพฤติ และ ปฎิบัติตัวเป็นคนดี
-                            </div>
-                            <div class="img">
-                                <img src="images/bg-bt.png" alt="">
-                            </div>
-
-                            <div class="btn-wrapper">
-                                <button class="btn1">ย้อนกลับ</button>
-                                <button class="btn2">ลงนามถวายพระพร</button>
-                            </div>
+                        <video id="video" width="500" height="640" autoplay></video>
+                        <div>
+                            <canvas id="canvas_camera" width="500" height="640"></canvas>
                         </div>
+                        
                         <!-- <img src="images/bg-take-photo.png" alt=""> -->
+                    </div>
+                </div>
+                <div class="image-take-image">
+                    <div class="text" id="text">
+                        ข้าพเจ้าจะทำตัวให้เกิดประโยชน์แก่สังคม
+                        และ ประเทศชาติ
+                        ด้วยการคิดดี ทำดี ประพฤติ และ ปฎิบัติตัวเป็นคนดี
+                    </div>
+                    <div class="img">
+                        <img src="images/bg-bt.png" alt="">
+                    </div>
+                
+                    <div class="btn-wrapper">
+                        <button class="btn1">ย้อนกลับ</button>
+                        <button class="btn2">ลงนามถวายพระพร</button>
                     </div>
                 </div>
                 <div class="btn-camera" id="snap">
@@ -445,11 +454,21 @@
             // Get access to the camera!
             if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                 console.log("mediaDevices");
-                
+                var constraints = { 
+                        video: { 
+                            width: 500, 
+                            height: 640,
+                            facingMode: 'user'
+                            } 
+                        }; 
+
                 // Not adding `{ audio: true }` since we only want video now
-                navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+                navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
                     //video.src = window.URL.createObjectURL(stream);
                     video.srcObject = stream;
+                    video.setAttribute('autoplay', '');
+                    video.setAttribute('muted', '');
+                    video.setAttribute('playsinline', '');
                     video.play();
                 });
             }
@@ -459,7 +478,7 @@
 
                 // Trigger photo take
                 document.getElementById("snap").addEventListener("click", function () {
-                    context.drawImage(video, 0, 0, 640, 480);
+                    context.drawImage(video, 0, 0, 500, 640);
 
                     if ($("input[name='word']").is(':checked')) {
                         var value =$("input[name='word']").val();
@@ -478,7 +497,8 @@
                     console.log("f 2", document.getElementById("text2").innerHTML)
                     
                     
-                    $(".image-take-image").show()
+                    $(".image-take-image").show();
+                    $(".image-take").addClass("active");
                     $("#video").hide()
                     $("#snap").hide()
                 })
@@ -491,12 +511,17 @@
             
         });
 
-        // $("#page4 .btn-camera").click(function () {
-        //     // $("#page2").hide();
-        //     // $("#page3").hide();
-        //     // $("#page4").hide();
-        //     // $("#page5").show();
-        // });
+        $("#page4 .btn1").click(function () {
+            $("#page1").hide();
+            $("#page2").hide();
+            $("#page3").hide();
+            $("#page4").show();
+             $("#video").show()
+             $(".image-take-image").hide()
+            $("#snap").show()
+            $("#page5").hide();
+            $("#page5").hide();
+        });
 
         // $("#page5 .btn1").click(function () {
         //     $("#page2").hide();
@@ -505,7 +530,7 @@
         //     $("#page5").hide();
         // });
 
-        $(".image-take-image .btn2").click(function () {
+        $("#page4 .image-take-image .btn2").click(function () {
             $("#page2").hide();
             $("#page3").hide();
             $("#page4").hide();
@@ -514,6 +539,10 @@
         });
 
         $("#page6 .btn1").click(function () {
+            $(':input').val('');
+            $('textarea').val('');
+            $(".textarea-wrapper label").show();
+            $(this).css("padding-top", "40px");
             $("#page1").show();
             $("#page2").hide();
             $("#page3").hide();

@@ -35,7 +35,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
-    /* background-image: url('../images/bg.png?v=1'); */
+    background-image: url('../images/bg.png?v=1');
     background-size: cover;
     background-repeat: no-repeat;
     overflow: auto;
@@ -61,8 +61,6 @@ span, p, .title {
 .select-word {
     width: 70%;
     margin: auto;
-    position: relative;
-    z-index: 1;
 }
 
 .select-word .wrapper{
@@ -77,14 +75,13 @@ span, p, .title {
 .select-word .wrapper .radio-text{
     position: absolute;
     left: 0;
-    top: 39%;
-    transform: translateY(-50%);
+    top: 0;
 }
 
 .select-word .wrapper .text{
-    margin-left: 62px;
+    margin-left: 80px;
     border: 5px solid #fcdb3f;
-    padding: 20px 15px;
+    padding: 20px;
     color: #754C29;
     text-align: center;
     font-size: 20px;
@@ -99,14 +96,13 @@ span, p, .title {
     margin: auto;
     height: auto;
     position: relative;
-    z-index: 1;
 }
 .textarea-wrapper label {
     position: absolute;
     top: 20px;
     font-family: 'anakotmai-bold';
     color: #754C29;
-    font-size: 20px;
+    font-size: 28px;
     left: 20px;
 }
 .textarea-wrapper textarea{
@@ -148,7 +144,17 @@ width: 0;
 }
 
 /* Create a custom radio button */
-.select-word .checkmark {position: absolute;top: 0;left: 0;height: 30px;width: 30px;background-color: #eee;box-shadow: 0px 0px 22px #FFD800;border: 3px solid #FFD800;border-radius: 50%;}
+.select-word .checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 50px;
+width: 50px;
+background-color: #eee;
+box-shadow: 0px 0px 22px #FFD800;
+border: 3px solid #FFD800;
+border-radius: 50%;
+}
 
 /* On mouse-over, add a grey background color */
 .select-word .container:hover input ~ .checkmark {
@@ -173,20 +179,21 @@ display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.select-word .container .checkmark:after {top: 5px;left: 5px;width: 20px;height: 20px;border-radius: 50%;background: #623A1D;}
+.select-word .container .checkmark:after {
+top: 11px;
+left: 11px;
+width: 28px;
+height: 28px;
+border-radius: 50%;
+background: #623A1D;
+}
 
 .logo-wrapper {
     width: 100%;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 200px;
     margin: auto;
     box-sizing: border-box;
-    position: relative;
-        z-index: 1;
-}
-
-.logo-wrapper svg {
-    width: 500px;
 }
 
 .logo-wrapper.small{
@@ -201,7 +208,7 @@ display: block;
 }
 
 .logo-wrapper.right {
-    padding: 50px 45px 16px 45px;
+    padding: 50px 45px 30px 45px;
     text-align: right;
 }
 
@@ -210,30 +217,26 @@ display: block;
 }
 
 .title-home {
-        font-family: 'anakotmai-medium';
-    font-size: 40px;
-    color: #b5a08eb5;
+    font-family: 'anakotmai-medium';
+    font-size: 70px;
+    color: #B5A08E;
     text-align: center;
-    padding: 80px 0;
+    padding: 170px 0;
     box-sizing: border-box;
     display: block;
     text-decoration: none;
     cursor: pointer;
-    position: relative;
-    z-index: 1;
 }
 
 .form-wrapper {
     width: 60%;
     margin: auto;
     display: block;
-    position: relative;
-    z-index: 1;
 }
 
 .form-wrapper .wrapper{
     width: 100%;
-    padding: 30px 0 10px 0;
+    padding: 80px 0 30px 0;
     display: inline-block;
     box-sizing: border-box;
 }
@@ -250,7 +253,7 @@ display: block;
 .form-group label {
     width: 100%;
     color: #754C29;
-    font-size: 24px;
+    font-size: 35px;
     font-family: 'anakotmai-bold';
     display: inline-block;
     margin-bottom: 10px;
@@ -258,28 +261,35 @@ display: block;
 
 .form-group input {
     width: 100%;
-    height: 60px;
+    height: 80px;
     border-radius: 10px;
     border: 5px solid #fcdb3f;
     background-image: radial-gradient(circle,#f7d458,#deaa40,#cc8c2f,#c17a24,#be7421);
     color: #fff;
-    font-size: 25px !important;
+    font-size: 30px !important;
     box-sizing: border-box;
     padding: 0 15px;
 }
 
 .line-img {
     text-align: center;
-    position: relative;
-    z-index: 1;
 }
 
 .btn-wrapper {
     text-align: center;
-    padding-top: 32px;
+    padding-top: 45px;
 }
 
-.btn-wrapper button {font-family: 'anakotmai-medium';font-size: 24px;border: 5px solid #fcdb3f;background-color: #FFCC66;width: 150px;height: 65px;margin: 0px 30px;border-radius: 10px;position: relative;z-index: 1;color: #613a1d;}
+.btn-wrapper button {
+font-family: 'anakotmai-medium';
+font-size: 30px;
+border: 5px solid #fcdb3f;
+background-color: #FFCC66;
+width: 250px;
+height: 80px;
+margin: 15px 30px;
+border-radius: 10px;
+}
 
 .form2 {
 
@@ -288,25 +298,21 @@ display: block;
 #page3 p{
     color: #754C29;
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     font-family: 'anakotmai-bold';
-    line-height: 33px;
-    position: relative;
-    z-index: 1;
+    line-height: 42px;
 }
 
 #page3 .line-img {
-    padding: 12px 0;
+    padding: 15px 0;
 }
 
 #page3 h3 {
-    font-size: 24px;
+    font-size: 45px;
     color: #754C29;
     text-align: center;
     font-family: 'anakotmai-bold';
-    padding-top: 28px;
-    position: relative;
-    z-index: 1;
+    padding-top: 58px;
 }
 
 .main-content, .content-wrapper{
@@ -319,10 +325,6 @@ display: block;
     z-index: 1;
     width: 100%;
     height: 100%;
-}
-
-.bg-tmp img {
-    max-width: 100%;
 }
 
 .image-take {
@@ -355,7 +357,7 @@ display: block;
 }
 
 #page4 .image-take-image {
-    margin-top: 0;
+    margin-top: 32px;
     position: relative;
     z-index: 2;
     width: 100%;
@@ -389,8 +391,8 @@ display: block;
     padding: 15px;
     color: #754C29;
     text-align: center;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 40px;
     border-radius: 10px;
     background-image: linear-gradient(to right,#f7d458,#deaa40,#cc8c2f,#c17a24,#BE7421);
     font-family: 'anakotmai-medium';
@@ -411,7 +413,7 @@ display: block;
 }
 
 #page4 .image-take-image .btn2 {
-        width: 350px;
+        width: 290px;
 }
 
 #page4,#page5 {
