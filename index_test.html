@@ -385,6 +385,11 @@
             $("#page6").show();
             var blessing= ""
             if($("input[name='word']").val() !== "") {
+                if (+$("input[name='word']").val() === +1) {
+                    blessing = document.getElementById("text1").innerHTML;
+                } else {
+                    blessing = document.getElementById("text2").innerHTML;
+                } 
                 blessing = $("input[name='word']").val()
             } else {
                 blessing = $('textarea').val()
@@ -399,9 +404,12 @@
                 url: "https://www.yensira.com/api/member/add",
                 type: "POST",
                 dataType: "application/json",
-                data: value,
+                data: JSON.stringify(value),
                 headers: { 
                     "access-token": "7223c5d5418d992b82432b516f9ac1c4d32a64b44852c0b3731aa5a87b97db34" 
+                },
+                success: function (data) {
+                    callback(data);
                 }
             });
         });
