@@ -390,12 +390,14 @@
                 } else {
                     blessing = document.getElementById("text2").innerHTML;
                 } 
-                blessing = $("input[name='word']").val()
+                // blessing = $("input[name='word']").val()
             } else {
                 blessing = $('textarea').val()
             }
+
+            var name = $('.fname').val() + " " + $('.sname').val()
             var value = { 
-                "name": $('.fname').val()+" "+ $('.sname').val(), 
+                "name": name, 
                 "image": "ssss",
                 "blessing": blessing
             }
@@ -409,7 +411,8 @@
                     "access-token": "7223c5d5418d992b82432b516f9ac1c4d32a64b44852c0b3731aa5a87b97db34" 
                 },
                 success: function (data) {
-                    callback(data);
+                    console.log("data", data);
+                    
                 }
             });
         });
