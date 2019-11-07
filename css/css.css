@@ -39,6 +39,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     overflow: auto;
+    overflow: hidden;
 }
 
 a, button, div {
@@ -192,7 +193,7 @@ display: block;
 .logo-wrapper.small{
     width: 100%;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 80px;
     box-sizing: border-box;
 }
 
@@ -321,6 +322,10 @@ display: block;
     height: 100%;
 }
 
+.bg-tmp.active {
+    display: none;
+}
+
 .bg-tmp img {
     max-width: 100%;
 }
@@ -368,9 +373,9 @@ display: block;
 
 #page4 .image-take-image .img{
     position: absolute;
-    bottom: 21%;
+    bottom: 44%;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
 }
 
 #page4 .image-take-image .btn-wrapper {
@@ -380,7 +385,7 @@ display: block;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    bottom: 10%;
+    bottom: 36%;
 }
 
 #page4 .image-take-image .text {
@@ -397,7 +402,7 @@ display: block;
     width: 550px;
     margin: auto;
     position: absolute;
-    bottom: 25%;
+    bottom: 47%;
     left: 50%;
     transform: translateX(-50%);
     height: 132px;
@@ -485,4 +490,9 @@ display: block;
 #page6 .btn-wrapper {
     text-align: center;
     padding-top: 300px;
+}
+
+#logo {
+    width: 400px;
+    margin: auto;
 }
