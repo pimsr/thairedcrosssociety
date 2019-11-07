@@ -405,14 +405,13 @@
             $.ajax({
                 url: "https://www.yensira.com/api/member/add",
                 type: "POST",
-                dataType: "application/json",
+                // dataType: "",
                 data: JSON.stringify(value),
                 headers: { 
                     "access-token": "7223c5d5418d992b82432b516f9ac1c4d32a64b44852c0b3731aa5a87b97db34" 
                 },
                 success: function (data) {
                     console.log("data", data);
-                    
                 }
             });
         });
@@ -439,7 +438,6 @@
             $(".textarea-wrapper label").hide();
             $(this).css("padding-top", "15px");
             $("input[name='word']").prop("checked", false);
-            
         });
 
         $("input[name='word']").click(function () {
