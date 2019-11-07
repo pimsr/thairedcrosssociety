@@ -383,11 +383,16 @@
             $("#page4").hide();
             $("#page5").hide();
             $("#page6").show();
-
+            var blessing= ""
+            if($("input[name='word']").val() !== "") {
+                blessing = $("input[name='word']").val()
+            } else {
+                blessing = $('textarea').val()
+            }
             var value = { 
                 "name": $('.fname').val()+" "+ $('.sname').val(), 
                 "image": "ssss",
-                "blessing": "ddd"
+                "blessing": blessing
             }
 
             $.ajax({
